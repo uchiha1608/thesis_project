@@ -1,0 +1,7 @@
+<input #username type="text" placeholder="username">
+<br/>
+<input #password type="password" placeholder="password here">
+<button (click)="login(username.value, password.value)">please</button>
+<ng-template [ngIf]="getItemm('username')=='tri'">Please enter something</ng-template>
+{{response["statusCode"]}}
+{{response["username"]}}

@@ -1,0 +1,54 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan lighten-1" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="/home"><img src="./assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">Family-Tree</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" href="/home" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" href="/tree" mdbWavesEffect>Trees</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" href="#about" mdbWavesEffect>About-us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" href="/contact-us" mdbWavesEffect>Contact</a>
+      </li>
+
+      
+
+    </ul>
+    <!-- Links -->
+    
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <ng-template [ngIf]="getItemm('username')==''">
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login<mdb-icon fas icon="user-alt"></mdb-icon></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Create Account<mdb-icon fas icon="user-plus"></mdb-icon></a>
+      </li>
+      </ng-template>
+      <ng-template [ngIf]="getItemm('username')!=''">
+        <li class="nav-item">
+          <a class="nav-link" href="/profile"><mdb-icon fas icon="user-alt"></mdb-icon>{{curName}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  (click)="logout()" href="/login">Log Out<mdb-icon fas icon="sign-out-alt" ></mdb-icon></a>
+        </li>
+      </ng-template>
+
+    </ul>
+    
+
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

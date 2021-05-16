@@ -1,0 +1,10 @@
+.navbar-items img{
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 250px;
+}
+.navbar-expand-lg{
+    position: fixed;
+    
+}

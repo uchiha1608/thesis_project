@@ -1,0 +1,65 @@
+<mdb-card> 
+  <mdb-card-header class="info-color white-text text-center py-3 ">
+    <h5>
+      <strong>Sign in</strong>
+    </h5>
+  </mdb-card-header>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5 pt-0">
+
+    <!-- Form -->
+    <form action="login(username.value, password.value)" class="text-center" style="color: #red;" >
+
+      <!-- Email -->
+      <div class="md-form form-group clearfix">
+        <input  type="text" #username id="username" class="form-control" mdbInput name="username">
+        <label for="username">E-mail</label>
+          
+      </div>
+
+      <!-- Password -->
+      <div class="md-form form-group clearfix">
+        <input  type="password" #password id="password" class="form-control" mdbInput name="password">
+        <label for="password">Password</label>
+           
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div>
+          <!-- Remember me -->
+          <mdb-checkbox>Remember me</mdb-checkbox>
+        </div>
+        <div>
+          <!-- Forgot password -->
+          <a href="">Forgot password?</a>
+        </div>
+      </div>
+
+      <!-- Sign in button -->
+      <a mdbBtn  color="info" (click)="login(username.value, password.value)" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0 " mdbWavesEffect type="button">Sign in</a>
+
+      <!-- Register -->
+      <p>Not a member yet?
+        <a href="/register">Register</a>
+      </p>
+
+      <!-- Social login -->
+      <p>or sign in with:</p>
+      <a type="button" mdbBtn floating="true" color="fb" size="sm">
+        <mdb-icon fab icon="facebook"></mdb-icon>
+      </a>
+      <a type="button" mdbBtn floating="true" color="tw" size="sm">
+        <mdb-icon fab icon="twitter"></mdb-icon>
+      </a>
+      <a type="button" mdbBtn floating="true" color="li" size="sm">
+        <mdb-icon fab icon="linkedin"></mdb-icon>
+      </a>
+      
+    </form>
+    <!-- Form -->
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form login -->
