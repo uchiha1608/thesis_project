@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './guards/auth.guard'; 
 import { ApiService } from './api.service';
 import { ProfileComponent } from './profile/profile.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ProfileComponent } from './profile/profile.component';
     IntroComponent,
     AdminHomeComponent,
     ProfileComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

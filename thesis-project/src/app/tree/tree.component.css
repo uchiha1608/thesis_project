@@ -19,7 +19,16 @@
 a{
     position: relative;
 }
+
 .tree-wrapper{
     margin-left: 200px;
-    margin-right: 200px;
+    margin-right:200px;
+    
+}
+@media only screen and (max-width: 850px){
+    .tree-wrapper{
+        margin: auto;
+        height: auto;
+        
+    }
 }

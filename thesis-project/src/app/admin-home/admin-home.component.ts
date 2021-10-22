@@ -1,8 +1,12 @@
 import { formatCurrency } from '@angular/common';
 import { expressionType } from '@angular/compiler/src/output/output_ast';
-import { Component, OnInit, setTestabilityGetter } from '@angular/core';
+import { Component, HostListener, OnInit, setTestabilityGetter } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ApiService } from '../api.service';
+
+export enum KEY_CODE{
+  ENTER_KEY = 13
+}
 @Component({
   selector: 'app-admin-home',
   templateUrl: './admin-home.component.html',
@@ -12,10 +16,17 @@ export class AdminHomeComponent implements OnInit {
   
   response = "";
   error: string;
+  username = "";
   constructor(private apiService: ApiService, private title: Title) { }
-
+  
   ngOnInit(): void {
     this.title.setTitle("Admin - Family tree");
+  }
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event:KeyboardEvent){
+    if(event.key === 'Enter'){
+      document.getElementById("login").click();
+    }
   }
   getItemm(item){
     return sessionStorage.getItem(item) || '';

@@ -1,7 +1,14 @@
-<input #username type="text" placeholder="username">
+<div class="intehe">
+<input #username type="text" placeholder="username" class="name">
 <br/>
 <input #password type="password" placeholder="password here">
-<button (click)="login(username.value, password.value)">please</button>
+<button id="login" (click)="login(username.value, password.value)">please</button>
 <ng-template [ngIf]="getItemm('username')=='tri'">Please enter something</ng-template>
 {{response["statusCode"]}}
-{{response["username"]}}
+{{response["tree"]}}
+
+
+</div>
+<div class="col-sm-6">
+    ehe
+</div>

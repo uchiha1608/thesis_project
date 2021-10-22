@@ -7,13 +7,12 @@ import { ApiService } from '../api.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  curUser: string = sessionStorage.getItem('username');
   constructor(private apiService: ApiService, private title: Title) { }
-
   ngOnInit(): void {
     this.title.setTitle("profile - " + sessionStorage.getItem("username"));
   }
-  curUser: string = sessionStorage.getItem('username');
+  
   
 
 

@@ -1,0 +1,10 @@
+.intehe{
+    margin: 56px 0px 0px 0px ;
+}
+.name:hover{
+    border: 3px solid red;
+    
+}
+.name{
+    border: 3px solid green;
+}

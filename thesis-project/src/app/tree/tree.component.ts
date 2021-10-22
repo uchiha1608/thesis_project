@@ -3,6 +3,7 @@ import {Renderer2, Inject} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import OrgChart from "@balkangraph/orgchart.js";
 import { ApiService } from '../api.service';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-tree',
   templateUrl: './tree.component.html',
@@ -12,9 +13,11 @@ export class TreeComponent implements OnInit {
   constructor(
     private renderer2: Renderer2,
     private apiService: ApiService,
-    @Inject(DOCUMENT) private _document
+    private title: Title,
+    @Inject(DOCUMENT) private _document,
   ) {}
   dataSource = {};
+  
   fetchData(formData: FormData, username: string){
     formData.append("username", sessionStorage.getItem("username"));
     this.apiService.treeLoadingService(formData).subscribe(
@@ -26,8 +29,26 @@ export class TreeComponent implements OnInit {
         console.log(err);
       })
   }
+  getItemm(item){
+    return sessionStorage.getItem(item) || '';
+  }
+  username = "";
   ngOnInit(){
-    
+    const formData: FormData = new FormData();
+    formData.append('username', this.username);
+    this.apiService.treeLoadingService(formData).subscribe(
+      res=>{
+
+        console.log(JSON.parse(res));
+        console.log(JSON.stringify(res));
+        this.dataSource = res["tree"];
+        
+        // console.log(this.dataSource);
+      },err=>{
+        console.log(err);
+      }
+    )
+    this.title.setTitle("Tree");
     OrgChart.templates.diva.link = '<path stroke-linejoin="round" stroke="grey" stroke-width="2px" fill="none"d="{rounded}"/>';
               var chart = new OrgChart(document.getElementById("tree"), {
                   mouseScrool: OrgChart.action.none,
