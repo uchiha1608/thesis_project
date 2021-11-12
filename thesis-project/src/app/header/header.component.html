@@ -11,9 +11,14 @@
       <li class="nav-item active">
         <a class="nav-link waves-light" href="/home" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
       </li>
+      <ng-template [ngIf]="getItemm('username')!=''">
       <li class="nav-item">
         <a class="nav-link waves-light" href="/tree" mdbWavesEffect>Trees</a>
       </li>
+      </ng-template>
+      <ng-template [ngIf]="getItemm('username')!=''">
+        <a class="nav-link waves-light" href="photos-gallery" mdbWavesEffect>Photo gallery</a>
+      </ng-template>
       <li class="nav-item">
         <a class="nav-link waves-light" href="#about" mdbWavesEffect>About-us</a>
       </li>

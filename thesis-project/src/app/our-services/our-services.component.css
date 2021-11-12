@@ -1,10 +1,15 @@
-.w3-container{
- background-color: #f0ffe6;
+ .container{
+    padding-top:5vh;
+    padding-bottom: 5vh;
+}
+.h2{
+    margin-top: 5vh;
 }
 img{
-    min-height: 475px;
-    min-width: 475px;
+    height: 400px;
 }
-body{
-    background-image: url("https://gamek.mediacdn.vn/zoom/345_230/2018/12/28/photo-1-1545988660706409791675.png");
+a{
+    text-decoration: none;
+    color: black;
+   
 }

@@ -30,6 +30,7 @@ export class LogInComponent implements OnInit {
       res=>{
         console.log(res);
         this.response = res;
+        
         if(this.response["statusCode"] == "200"){
           if(this.response["role"] == "1"){
             sessionStorage.setItem('username',this.response["username"]);

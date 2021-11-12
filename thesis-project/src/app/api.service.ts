@@ -10,7 +10,7 @@ export class ApiService {
   constructor(private htttp: HttpClient)
   {}
   loginService(formData: FormData): Observable<any>{
-    const url = "http://localhost/api.com/treeHandler.php"
+    const url = "http://localhost/api.com/auth.php"
     // const url = "http://localhost/api.com/auth.php"
     return  this.htttp.post<any>(url, formData);
   }

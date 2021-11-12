@@ -39,7 +39,7 @@ export class AdminHomeComponent implements OnInit {
       res=>{
         console.log(res);
         this.response=res;
-        sessionStorage.setItem('username',res)
+        sessionStorage.setItem('username',res["username"])
         //localStorage.setItem('username',res);
       },
       err=>{

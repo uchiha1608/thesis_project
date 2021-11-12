@@ -8,6 +8,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent},
   { path: "contact-us", component: ContactUsComponent},
   { path: "admin-home", component:AdminHomeComponent},
-  { path: "profile", component:ProfileComponent}
+  { path: "profile", component:ProfileComponent},
+  { path: "photo-gallery", component:PhotoGalleryComponent}
   
 ];
 

@@ -27,6 +27,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { ApiService } from './api.service';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ForgetPassWordComponent } from './forget-pass-word/forget-pass-word.component';
+import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AdminHomeComponent,
     ProfileComponent,
     LandingPageComponent,
+    ForgetPassWordComponent,
+    PhotoGalleryComponent
   ],
   imports: [
     BrowserModule,

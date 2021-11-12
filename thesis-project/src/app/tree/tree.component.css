@@ -1,16 +1,16 @@
 [node-id="1"] rect {
     fill: #750000;
 }
-:host ::ng-deep [node-id='3'] rect, :host ::ng-deep [node-id='6'] rect, :host ::ng-deep [node-id='7'] rect, :host ::ng-deep [node-id='9'] rect, :host ::ng-deep [node-id='11'] rect{
+:host ::ng-deep [data-n-id='3'] rect, :host ::ng-deep [data-n-id='6'] rect, :host ::ng-deep [data-n-id='7'] rect, :host ::ng-deep [data-n-id='9'] rect, :host ::ng-deep [data-n-id='11'] rect{
     fill: pink;
 }
-:host ::ng-deep [node-id='12'] rect, :host ::ng-deep [node-id='13'] rect, :host ::ng-deep [node-id='17'] rect, :host ::ng-deep [node-id='18'] rect, :host ::ng-deep [node-id='21'] rect{
+:host ::ng-deep [data-n-id='12'] rect, :host ::ng-deep [data-n-id='13'] rect, :host ::ng-deep [data-n-id='17'] rect, :host ::ng-deep [data-n-id='18'] rect, :host ::ng-deep [data-n-id='21'] rect{
     fill: pink;
 }
-:host ::ng-deep [node-id='26'] rect, :host ::ng-deep [node-id='28'] rect, :host ::ng-deep [node-id='38'] rect, :host ::ng-deep [node-id='40'] rect, :host ::ng-deep [node-id='41'] rect{
+:host ::ng-deep [data-n-id='26'] rect, :host ::ng-deep [data-n-id='28'] rect, :host ::ng-deep [data-n-id='38'] rect, :host ::ng-deep [data-n-id='40'] rect, :host ::ng-deep [data-n-id='41'] rect{
     fill: pink;
 }
-:host ::ng-deep [node-id='43'] rect, :host ::ng-deep [node-id='46'] rect, :host ::ng-deep [node-id='47'] rect{
+:host ::ng-deep [data-n-id='43'] rect, :host ::ng-deep [data-n-id='46'] rect, :host ::ng-deep [data-n-id='47'] rect, :host ::ng-deep [data-n-id='2'] rect{
     fill: pink;
 }
 .tree-container{
@@ -21,6 +21,7 @@ a{
 }
 
 .tree-wrapper{
+    margin-top: 3rem;
     margin-left: 200px;
     margin-right:200px;
     

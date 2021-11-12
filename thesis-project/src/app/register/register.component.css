@@ -1,8 +1,83 @@
-.card{
-    float:none;
-    margin: 0 auto;
-    margin-bottom: 60px;
-    margin-top: 60px;
-    width: 30%;
-    
-  }
+body{
+  background-image: url('https://cdn.suwalls.com/wallpapers/photography/new-tree-growing-39832-1920x1200.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.login{
+  height: auto;
+  z-index: 10;
+}
+.login-btn{
+  width:auto;
+  align-items: center;
+}
+.col-sm-3{
+  background-color: white;
+  height: 100vh;
+  
+}
+.h2, .col-sm-9{
+  font-family: museo,sans-serif;
+}
+.form-container{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.col-sm-9{
+  margin-top: 75vh;
+
+}
+hr{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.media-login, .alter-log, .create-account{
+  padding-top: 2vh;
+}
+.forget-pass, i{
+  float: right;
+}
+a{
+  display: inline-flex;
+}
+.facebook span, .google-plus span{
+  font-size: 16px;
+  float: left;
+}
+.facebook-login, .google-login{
+  
+  padding-left: 50%;
+}
+.bi-google{
+  color: red;
+}
+.regis-btn{
+  background: rgb(27, 89, 117);
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+.regis-btn:hover{
+  background: rgb(7, 61, 207);
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+.login-head{
+  padding-top: 7.5%;
+  padding-bottom: 7.5%;
+}
+.flex-row{
+  padding-top: 10vh;
+  
+}
+.text-white{
+  font-family: Garamond;
+  
+}
+.h3{
+  font-size: 60px;
+}
+.text{
+  font-size: 26px;
+  width: 60%;
+}

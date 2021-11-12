@@ -1,62 +1,69 @@
-<mdb-card> 
-  <mdb-card-header class="info-color white-text text-center py-3 ">
-    <h5>
-      <strong>Sign in</strong>
-    </h5>
-  </mdb-card-header>
+<!--<a mdbBtn  color="info" (click)="login(username.value, password.value)" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0 " mdbWavesEffect type="button">Sign in</a> -->
 
-  <!--Card content-->
-  <mdb-card-body class="px-lg-5 pt-0">
-
-    <!-- Form -->
-    <form action="login(username.value, password.value)" class="text-center" style="color: #red;" >
-
-      <!-- Email -->
-      <div class="md-form form-group clearfix">
-        <input  type="text" #username id="username" class="form-control" mdbInput name="username">
-        <label for="username">E-mail</label>
-          
-      </div>
-
-      <!-- Password -->
-      <div class="md-form form-group clearfix">
-        <input  type="password" #password id="password" class="form-control" mdbInput name="password">
-        <label for="password">Password</label>
-           
-      </div>
-
-      <div class="d-flex justify-content-around">
-        <div>
-          <!-- Remember me -->
-          <mdb-checkbox>Remember me</mdb-checkbox>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+</head>
+<body>
+  
+<div class="login container-fluid">
+  <div class="row">
+    <div class="col-sm-9 d-none d-sm-block">
+    	<div class="h3 row justify-content-center text-white">Welcomeback to our website!</div>
+		<div class="h4 row  text-white text-center justify-content-center"><div class="text text-wrap text-center">Login with our accounts or others accounts to share your memmories, love with your family around the world!</div></div>
+	</div>
+    <div class="col-sm-3 shadow-sm ">
+    <div class="d-flex flex-row justify-content-center login-head-container">
+    	<img class="" src="./assets/img/logo.png">
+    	<div class="h2  login-head">Login
+    		
+    	</div></div>
+    	<div class="form-container">
+    	<form>
+    		<div class=" mb-3">
+    			<div class="form-label">Email</div>
+    			<input type="email"  id="username" name="username" #username class="form-control">
+    		</div>
+    		<div class="mb-3">
+    			<div class="form-label">Password</div>
+    			<input type="password"  id="password" name="password" #password class="form-control">
+    		</div>
+        <div class="form-check mb-3">
+          <label class="form-label">
+            <input class="form-check-input" type="checkbox" name="remember" id="remeber"> Remember this account
+          </label>
+          <a class="forget-pass" href="/forgetpass">Forget your password?</a>           
         </div>
-        <div>
-          <!-- Forgot password -->
-          <a href="">Forgot password?</a>
+    		
+    	</form>
+      <div class="d-grid"><button  (click)="login(username.value, password.value)" class="btn btn-primary btn-lg btn-block login-btn">Sign in</button></div>
+      <div class="text-center alter-log"><span class="text-center">Or login with:</span></div>
+      <div class="row media-login">
+        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+          <a href=# class="facebook-login">
+            
+            <i class="bi bi-facebook h3"></i>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+          <a href=# class="google-login">
+            
+            <i class="bi bi-google h3"></i>
+          </a>
         </div>
       </div>
+      <hr class="bg-danger border-2 border-top border-danger">
+      <div class="text-center">Don't have an account yet?</div>
+      <div class="d-grid create-account "><a href="/register" class="btn btn-primary btn-lg regis-btn regis-btn btn-block" role="button" data-bs-toggle="/register"><div class="text-center">Create new account</div></a></div>
+    </div>
 
-      <!-- Sign in button -->
-      <a mdbBtn  color="info" (click)="login(username.value, password.value)" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0 " mdbWavesEffect type="button">Sign in</a>
-
-      <!-- Register -->
-      <p>Not a member yet?
-        <a href="/register">Register</a>
-      </p>
-
-      <!-- Social login -->
-      <p>or sign in with:</p>
-      <a type="button" mdbBtn floating="true" color="fb" size="sm">
-        <mdb-icon fab icon="facebook"></mdb-icon>
-      </a>
-      <a type="button" mdbBtn floating="true" color="tw" size="sm">
-        <mdb-icon fab icon="twitter"></mdb-icon>
-      </a>
-      
-    </form>
-    <!-- Form -->
-
-  </mdb-card-body>
-
-</mdb-card>
-<!-- Material form login -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

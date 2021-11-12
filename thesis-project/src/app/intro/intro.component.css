@@ -1,12 +1,95 @@
 
-.about-section {
-  font-family: "Lucida Console", Courier, monospace;
+.about-section, .carousel {
+  font-family: var(--fs-font-face-heading,Verdana,Ayuthaya,'HanaMinBFont',sans-serif) /* [2,3] */;
   font-size: 25px;
-  padding: 100px;
-  margin-top: -20px;
+  padding-top: 54.33px;
+  
   text-align: center;
-  background-color: #413e3af1;
-  color: white;
+  background-color: #f5f5f5f1;
+  color: rgb(245, 238, 238);
+  height: 70vh;
+}
+.carousel-inner img{
+  height: auto;
+  display: block;
+  
+  max-height: calc(70vh - 54.33px);
+}
+.row-intro3{
+  background-image: url("https://clarkebenefits.com/wp-content/uploads/2018/07/family-background.jpg");
+  min-height: 60vh;
+  padding-top: 10vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+.row-intro4{
+  background-image: url("https://cdn.vungoi.vn/vungoi/1565945383908_art.jpg");
+  min-height: 70vh;
+  padding-top: 10vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.intro3 .h1{
+  word-wrap: break-word;
+  width: 70%;
+}
+.intro4 .col-sm-3{
+  padding-top: 12vh;
+}
+.intro4{
+  border-style: outlet;
+}
+.intro3 p{
+  font-size: 15px;
+  word-wrap: break-word;
+  width: 80%;
+}
+h1, p{
+  color:rgb(255, 251, 251);
+}
+.intro3 .h1, .intro3 p{
+  color:white;
+}
+.intro4 .h1, .intro4 p{
+  color:rgb(67, 79, 187);
+}
+.intro4 p{
+  font-size: 1rem;
 }
 
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(50%);
+}
+#h1-1st,
+#p-1st{
+  color: black;
+}
+.carousel-caption{
+  word-wrap: break-word;
+}
+.intro2 .h1, .intro2 p{
+  word-wrap: break-word;
+  width: 70%;
+}
 
+.col-sm-4{
+  padding-top: 5vh;
+}
+.col-sm-4 .h1, .col-sm-4 p{
+  color: black;
+}
+.col-sm-4 a{
+  width: 80%;
+}
+.img2{
+  padding-right: 5vw;
+  
+}
+.img2 img{
+  height: 93%;
+}
+p{
+  font-size: 1.5rem;
+}
