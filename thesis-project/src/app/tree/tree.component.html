@@ -4,12 +4,12 @@
 <link rel="stylesheet" href="tree.component.css">
 <div class="w3-container w3-padding-64 w3-center">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<h2>Hoàng's Family tree</h2>
+<!--<h2>Hoàng's Family tree</h2>
 
 <div class="wrapper">
 <div id="sidehar" class="sidebar-header">
 <li>
-    <a href="#">
+    <a>
         Family's name: Hoàng
     </a>
     </li>
@@ -17,11 +17,20 @@
         Numbers of generations: 9
     </a></li>
     <li><a>
-        Number of family members: 53
+        Number of family members: 50
     </a></li>
 </div>
-</div>
+</div> -->
 
 <!-- <ng-template [ngIf]="getItemm('username')!=''"> -->
-<div class="tree-wrapper" style="border: 2px;border-style: outset;"><div id="tree" class="tree-content" style=""></div></div>
+<!--<div class="tree-wrapper" style="border: 2px;border-style: outset;"> -->
+    {{this.dataSource}}
+    
+    {{this.temp2}}
+    
+    <div id="tree" class="tree-content">
+        <!--<select id="orientation" style="position: absolute;right: 30px;top: 30px;font-size: 14px;padding: 10px;background-color: #F57C00;color: #ffffff;width: 100px;z-index:2;" id="selectTemplate">
+        </select> -->
+    </div>
+<!--</div> -->
 <!-- </ng-template> -->

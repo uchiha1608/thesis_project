@@ -4,7 +4,8 @@ import { data } from 'jquery';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { AuthService } from '../auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
-import { Router } from '@angular/router';
+import { Router, RoutesRecognized } from '@angular/router';
+import { Routes } from '@angular/router';
 import { ApiService } from '../api.service';
 @Component({
   selector: 'app-log-in',
@@ -13,8 +14,7 @@ import { ApiService } from '../api.service';
 })
 export class LogInComponent implements OnInit {
   response = "";
-
-  constructor(private apiService: ApiService, private title: Title) {}
+  constructor(private apiService: ApiService, private title: Title, private router: Router) {}
 
   ngOnInit(): void {
     this.title.setTitle("Login - Family tree");
@@ -34,7 +34,16 @@ export class LogInComponent implements OnInit {
         if(this.response["statusCode"] == "200"){
           if(this.response["role"] == "1"){
             sessionStorage.setItem('username',this.response["username"]);
-            window.location.href = "home";
+            sessionStorage.setItem('name',this.response["name"]);
+            sessionStorage.setItem('phone',this.response["phone"]);
+            sessionStorage.setItem('email',this.response["email"]);
+            sessionStorage.setItem('sex',this.response["sex"]);
+            sessionStorage.setItem('id',this.response["id"]);
+            sessionStorage.setItem('dob',this.response["dob"]);
+            sessionStorage.setItem('lname',this.response["lname"]);
+            sessionStorage.setItem('fname',this.response["fname"]);
+            window.location.href = "profile";
+            // this.router.navigate(['/profile']);
           }
           if(this.response["role"] == "2"){
             sessionStorage.setItem('username',this.response["username"]);
@@ -44,6 +53,8 @@ export class LogInComponent implements OnInit {
             sessionStorage.setItem('admin-name', this.response["username"]);
             window.location.href = "admin-home";
           }
+        } else{
+          window.alert("Wrong username or password");
         }
       },
       err=>{

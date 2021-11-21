@@ -4,7 +4,12 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="assets/img/male-users.png" alt="User profile picture"/>
+                            <ng-template [ngIf]="getItemm('sex')=='male'">
+                                <img src="assets/img/male-users.png" alt="User profile picture"/>
+                            </ng-template>
+                            <ng-template [ngIf]="getItemm('sex')=='female'">
+                                <img src="assets/img/female-users.png" alt="User profile picture"/>
+                            </ng-template>
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
@@ -17,7 +22,7 @@
                                         {{curUser}}
                                     </h5>
                                     <h6>
-                                        UID: ehe
+                                        UID: {{curId}}
                                     </h6>
                                     <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -25,13 +30,61 @@
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Family tree</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="tree" role="tab" aria-controls="profile" aria-selected="false">Family tree</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                    
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <!--<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>-->
+                        <button type="button" class="btn btn-primary rounded-pill border border-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Edit profile
+                            </button>
+                            
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">EDIT PROFILE</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-label">First Name</div>
+                                                <input type="text"   value={{curFname}} id="editFname" name="editFname" #editFname class="form-control">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-label">Last Name</div>
+                                                <input type="text"  value={{curLname}} id="editLname" name="editLname" #editLname class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                    <div class="form-label">Email</div>
+                                    <input type="email" value={{curEmail}} id="editEmail" name="editEmail" #editEmail class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                    <div class="form-label">Phone</div>
+                                    <input type="tel" value={{curPhone}} id="editPhone" name="editPhone" #editPhone class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                    <div class="form-label">Date of birth</div>
+                                    <input type="date" value={{curDOB}} id="editDOB" name="editDOB" #editDOB class="form-control">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" (click)="edit(editFname.value,editLname.value, editEmail.value, editPhone.value, editDOB.value)" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    
                     </div>
                 </div>
                 <div class="row">
@@ -41,12 +94,11 @@
                             <a href="">Website Link</a><br/>
                             <a href="">Bootsnipp Profile</a><br/>
                             <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
+                            <p>Hobby</p>
+                            <a href="">Fishing</a><br/>
+                            <a href="">Cooking</a><br/>
+                            <a href="">gaming</a><br/>
+                            
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -54,34 +106,42 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>User Id</label>
+                                                <label>User Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti123</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
+                                                <p>{{curUser}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Email</label>
+                                                <label>Name:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
+                                                <p>{{curName}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Phone</label>
+                                                <label>Email:</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                                <p>{{curEmail}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{curPhone}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Date of birth:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{curDOB}}</p>
                                             </div>
                                         </div>
                                         <div class="row">

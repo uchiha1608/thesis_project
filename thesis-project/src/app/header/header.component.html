@@ -1,35 +1,32 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan lighten-1" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan lighten-1" [containerInside]="false" id="navbar">
 
-  <!-- Navbar brand -->
+  
   <mdb-navbar-brand><a class="navbar-brand" href="/home"><img src="./assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">Family-Tree</a></mdb-navbar-brand>
 
-  <!-- Collapsible content -->
   <links>
 
-    <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-light" href="/home" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link waves-light" [routerLink]="['/home']" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
       </li>
       <ng-template [ngIf]="getItemm('username')!=''">
       <li class="nav-item">
-        <a class="nav-link waves-light" href="/tree" mdbWavesEffect>Trees</a>
+        <a class="nav-link waves-light" [routerLink]="['/tree']"  mdbWavesEffect>Trees</a>
       </li>
       </ng-template>
       <ng-template [ngIf]="getItemm('username')!=''">
-        <a class="nav-link waves-light" href="photos-gallery" mdbWavesEffect>Photo gallery</a>
+        <a class="nav-link waves-light" [routerLink]="['/photo-gallery']" mdbWavesEffect>Photo gallery</a>
       </ng-template>
       <li class="nav-item">
         <a class="nav-link waves-light" href="#about" mdbWavesEffect>About-us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" href="/contact-us" mdbWavesEffect>Contact</a>
+        <a class="nav-link waves-light" [routerLink]="['/contact-us']" mdbWavesEffect>Contact</a>
       </li>
 
       
 
     </ul>
-    <!-- Links -->
     
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <ng-template [ngIf]="getItemm('username')==''">
@@ -53,7 +50,38 @@
     
 
   </links>
-  <!-- Collapsible content -->
+  
 
 </mdb-navbar>
-<!--/.Navbar-->
+
+<!--<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>-->

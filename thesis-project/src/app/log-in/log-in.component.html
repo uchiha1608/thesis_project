@@ -24,13 +24,16 @@
     		
     	</div></div>
     	<div class="form-container">
-    	<form>
+    	<form class=" g-3 needs-validation" novalidate> 
     		<div class=" mb-3">
-    			<div class="form-label">Email</div>
-    			<input type="email"  id="username" name="username" #username class="form-control">
+    			<div for="username" class="form-label">Username</div>
+    			<input type="email"  id="username" name="username" #username class="form-control" required>
+          <div class="valid-feedback">
+          Nice!
+          </div>
     		</div>
     		<div class="mb-3">
-    			<div class="form-label">Password</div>
+    			<div class="form-label">Password:</div>
     			<input type="password"  id="password" name="password" #password class="form-control">
     		</div>
         <div class="form-check mb-3">

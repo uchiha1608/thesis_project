@@ -18,24 +18,35 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.title.setTitle("Register - Family tree");
   }
-  register(username: string, fname: string, lname: string, email: string, password: string, phone: string){
+  register(username: string, fname: string, lname: string, email: string, password: string, phone: string, sex:string, dob: string){
     const formData: FormData = new FormData();
     
-    formData.append('type', '1');
+    formData.append('type', '2');
     formData.append('username',username);
     formData.append('lname', lname);
     formData.append('fname', fname);
     formData.append('email', email);
     formData.append('password', password);
     formData.append('phone', phone);
+    formData.append('sex', sex);
+    formData.append('dob', dob);
     this.apiService.loginService(formData).subscribe(
       res=>{
         console.log(res);
         this.response = res;
         if(this.response["statusCode"] == "200"){         
           sessionStorage.setItem('username',this.response["username"]);
-          window.location.href = "home";
+          sessionStorage.setItem('name',this.response["name"]);
+          sessionStorage.setItem('phone',this.response["phone"]);
+          sessionStorage.setItem('email',this.response["email"]);
+          sessionStorage.setItem('sex',this.response["sex"]);
+          sessionStorage.setItem('id',this.response["id"]);
+          sessionStorage.setItem('dob',this.response["dob"]);
+          sessionStorage.setItem('lname',this.response["lname"]);
+          sessionStorage.setItem('fname',this.response["fname"]);
+          
           window.alert("Create Account successfully!");
+          window.location.href = "/profile";
         } else {
           window.alert("Username Already exist!");
         }

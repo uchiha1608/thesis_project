@@ -7,10 +7,10 @@
 :host ::ng-deep [data-n-id='12'] rect, :host ::ng-deep [data-n-id='13'] rect, :host ::ng-deep [data-n-id='17'] rect, :host ::ng-deep [data-n-id='18'] rect, :host ::ng-deep [data-n-id='21'] rect{
     fill: pink;
 }
-:host ::ng-deep [data-n-id='26'] rect, :host ::ng-deep [data-n-id='28'] rect, :host ::ng-deep [data-n-id='38'] rect, :host ::ng-deep [data-n-id='40'] rect, :host ::ng-deep [data-n-id='41'] rect{
+:host ::ng-deep [data-n-id='34'] rect,:host ::ng-deep [data-n-id='26'] rect, :host ::ng-deep [data-n-id='28'] rect, :host ::ng-deep [data-n-id='38'] rect, :host ::ng-deep [data-n-id='40'] rect, :host ::ng-deep [data-n-id='41'] rect{
     fill: pink;
 }
-:host ::ng-deep [data-n-id='43'] rect, :host ::ng-deep [data-n-id='46'] rect, :host ::ng-deep [data-n-id='47'] rect, :host ::ng-deep [data-n-id='2'] rect{
+:host ::ng-deep [data-n-id='47'] rect, :host ::ng-deep [data-n-id='2'] rect{
     fill: pink;
 }
 .tree-container{
@@ -19,11 +19,21 @@
 a{
     position: relative;
 }
-
+#tree{
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 .tree-wrapper{
     margin-top: 3rem;
-    margin-left: 200px;
-    margin-right:200px;
+    margin-left: 5vw;
+    margin-right:5vw;
     
 }
 @media only screen and (max-width: 850px){

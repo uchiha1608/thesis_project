@@ -9,6 +9,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
+import { ForgetPassWordComponent } from './forget-pass-word/forget-pass-word.component';
 import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
@@ -21,12 +22,13 @@ const routes: Routes = [
   { path: "contact-us", component: ContactUsComponent},
   { path: "admin-home", component:AdminHomeComponent},
   { path: "profile", component:ProfileComponent},
-  { path: "photo-gallery", component:PhotoGalleryComponent}
+  { path: "photo-gallery", component: PhotoGalleryComponent},
+  { path: "forgetpass", component: ForgetPassWordComponent}
   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

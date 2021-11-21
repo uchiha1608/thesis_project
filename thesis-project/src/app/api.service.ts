@@ -30,4 +30,8 @@ export class ApiService {
     const url = "http://localhost/api.com/admin.php";
     return this.htttp.post<any>(url, formData);
   }
+  imgService(formData: FormData): Observable<any>{
+    const url = "";
+    return this.htttp.post<any>(url, formData);
+  }
 }
