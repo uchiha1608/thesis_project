@@ -29,6 +29,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ForgetPassWordComponent } from './forget-pass-word/forget-pass-word.component';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
+import { NgBootstrapFormValidationModule, CUSTOM_ERROR_MESSAGES } from 'ng-bootstrap-form-validation';
 
 @NgModule({
   declarations: [
@@ -64,8 +65,11 @@ import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
     FormsModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
+    NgBootstrapFormValidationModule.forRoot(),
+    NgBootstrapFormValidationModule
   ],
-  providers: [ Title, AuthGuard, ApiService ],
+  providers: [ Title, AuthGuard, ApiService,
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

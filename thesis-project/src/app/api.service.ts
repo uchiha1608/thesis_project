@@ -26,6 +26,10 @@ export class ApiService {
     const url = "http://localhost/api.com/treeHandler.php";
     return this.htttp.post<any>(url, formData);
   }
+  treeAddService(addForm: FormData): Observable<any>{
+    const url = "http://localhost/api.com/treeHandler.php";
+    return this.htttp.post<any>(url, addForm);
+  }
   adminService(formData: FormData): Observable<any>{
     const url = "http://localhost/api.com/admin.php";
     return this.htttp.post<any>(url, formData);

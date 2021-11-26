@@ -18,7 +18,7 @@ export class AdminHomeComponent implements OnInit {
   error: string;
   username = "";
   constructor(private apiService: ApiService, private title: Title) { }
-  
+  temp  = "<h1>Ehe</h1>";
   ngOnInit(): void {
     this.title.setTitle("Admin - Family tree");
   }

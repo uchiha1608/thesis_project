@@ -1,25 +1,60 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,HostListener, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { data } from 'jquery';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { AuthService } from '../auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'; 
 import { Router, RoutesRecognized } from '@angular/router';
 import { Routes } from '@angular/router';
 import { ApiService } from '../api.service';
+import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
+import { ErrorMessage } from 'ng-bootstrap-form-validation';
+export enum KEY_CODE{
+  ENTER_KEY = 13
+}
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css']
 })
+
 export class LogInComponent implements OnInit {
   response = "";
+  formGroup: FormGroup;
+  customErrorMessages: ErrorMessage[] = [
+    {
+      error:'required',
+      format: (label, error) => `${label.toUpperCase()} IS DEFINITELY REQUIRED!`
+    },
+    {
+      error: 'pattern',
+      format: (label, error) => `${label.toUpperCase()} DOESN'T LOOK RIGHT...`
+    }
+  ];
   constructor(private apiService: ApiService, private title: Title, private router: Router) {}
-
+  
   ngOnInit(): void {
+    this.formGroup = new FormGroup({
+      Username: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(20)
+        //Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
+      ]),
+      Password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(20)
+      ])
+    });
     this.title.setTitle("Login - Family tree");
   }
-  
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event:KeyboardEvent){
+    if(event.key === 'Enter'){
+      document.getElementById("login").click();
+    }
+  }
   login(username: string, password: string) {
     
     const formData: FormData = new FormData();
@@ -42,6 +77,8 @@ export class LogInComponent implements OnInit {
             sessionStorage.setItem('dob',this.response["dob"]);
             sessionStorage.setItem('lname',this.response["lname"]);
             sessionStorage.setItem('fname',this.response["fname"]);
+            let dialog:any = <any>document.getElementById("loginDialog");
+            dialog.showModal();
             window.location.href = "profile";
             // this.router.navigate(['/profile']);
           }
@@ -53,7 +90,7 @@ export class LogInComponent implements OnInit {
             sessionStorage.setItem('admin-name', this.response["username"]);
             window.location.href = "admin-home";
           }
-        } else{
+        } else{         
           window.alert("Wrong username or password");
         }
       },

@@ -4,3 +4,4 @@
 [0m2021.11.21 12:22:39 WARN  no build tool detected in workspace 'C:\Users\pc\family-tree\thesis-project'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 Nov 21, 2021 12:22:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+[0m2021.11.21 14:05:16 INFO  shutting down Metals[0m
