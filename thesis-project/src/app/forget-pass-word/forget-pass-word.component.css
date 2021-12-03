@@ -2,3 +2,11 @@
     height: 66.75vh;
     padding-top: 112px;
 }
+.card{
+    float:none;
+    margin: 0 auto;
+    
+    width: 30%;
+    margin-top: 13vh;
+    margin-bottom: 15.25vh;
+  }

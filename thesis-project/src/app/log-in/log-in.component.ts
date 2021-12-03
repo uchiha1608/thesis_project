@@ -55,6 +55,33 @@ export class LogInComponent implements OnInit {
       document.getElementById("login").click();
     }
   }
+  fblogin(){
+    const formData: FormData = new FormData();
+    formData.append('request', 'fblogin');
+    this.apiService.fbLoginService(formData).subscribe(
+      res => {
+        this.response = res;
+        if(this.response['statusCode'] == '200'){
+          sessionStorage.setItem('username',this.response["username"]);
+          sessionStorage.setItem('name',this.response["name"]);
+          //sessionStorage.setItem('phone',this.response["phone"]);
+          sessionStorage.setItem('email',this.response["email"]);
+          //sessionStorage.setItem('sex',this.response["sex"]);
+          //sessionStorage.setItem('id',this.response["id"]);
+          //sessionStorage.setItem('dob',this.response["dob"]);
+          //sessionStorage.setItem('lname',this.response["lname"]);
+          //sessionStorage.setItem('fname',this.response["fname"]);
+          let dialog:any = <any>document.getElementById("loginDialog");
+          dialog.showModal();
+          this.router.navigate(['/profile']);
+          //window.location.href = "profile";
+        }
+      }, err => {
+
+      }
+    )
+
+  }
   login(username: string, password: string) {
     
     const formData: FormData = new FormData();
@@ -77,6 +104,7 @@ export class LogInComponent implements OnInit {
             sessionStorage.setItem('dob',this.response["dob"]);
             sessionStorage.setItem('lname',this.response["lname"]);
             sessionStorage.setItem('fname',this.response["fname"]);
+            sessionStorage.setItem('profession', this.response["profession"]);
             let dialog:any = <any>document.getElementById("loginDialog");
             dialog.showModal();
             window.location.href = "profile";

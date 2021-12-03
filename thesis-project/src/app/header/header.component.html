@@ -1,7 +1,7 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan lighten-1" [containerInside]="false" id="navbar">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark container-fluid lighten-1" [containerInside]="false" id="navbar">
 
   
-  <mdb-navbar-brand><a class="navbar-brand" href="/home"><img src="./assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">Family-Tree</a></mdb-navbar-brand>
+  <mdb-navbar-brand><a class="navbar-brand " [routerLink]="['/home']"><img src="./assets/img/logo.png" height="30" class="d-inline-block align-top" alt="">Family-Tree</a></mdb-navbar-brand>
 
   <links>
 
@@ -30,19 +30,20 @@
     
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <ng-template [ngIf]="getItemm('username')==''">
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login<mdb-icon fas icon="user-alt"></mdb-icon></a>
+      <li class="nav-item login-btn rounded-pill border border-info">
+        <a class="nav-link" [routerLink]="['/login']">Login <mdb-icon fas icon="user-alt"></mdb-icon></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register">Create Account<mdb-icon fas icon="user-plus"></mdb-icon></a>
+      <li class="nav-item rounded-pill border border-info">
+        <a class="nav-link" [routerLink]="['/register']">Create Account <mdb-icon fas icon="user-plus"></mdb-icon></a>
       </li>
       </ng-template>
       <ng-template [ngIf]="getItemm('username')!=''">
-        <li class="nav-item">
-          <a class="nav-link" href="/profile"><mdb-icon fas icon="user-alt"></mdb-icon>{{curName}}</a>
+        <li class="nav-item rounded-pill login-btn border border-info">
+          <a class="nav-link" href="/profile"><mdb-icon fas icon="user-alt"> </mdb-icon>{{curName}} </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link"  (click)="logout()" href="/login">Log Out<mdb-icon fas icon="sign-out-alt" ></mdb-icon></a>
+        
+        <li class="nav-item border border-info rounded-pill">
+          <a class="nav-link"  (click)="logout()" [routerLink]="['/login']">Log Out <mdb-icon fas icon="sign-out-alt" ></mdb-icon></a>
         </li>
       </ng-template>
 

@@ -96,3 +96,14 @@ body{
 router-outlet{
     background-image: url("https://img.republicworld.com/republic-prod/stories/promolarge/xxhdpi/xc6b8cwt7yguhbzj_1601278482.jpeg");
 }
+i{
+    padding-right: 5px;
+}
+.button-row{
+    width: 10vw;
+    margin-left: -200px;
+}
+
+.edit-profile-btn{
+    margin-bottom: 10px;
+}

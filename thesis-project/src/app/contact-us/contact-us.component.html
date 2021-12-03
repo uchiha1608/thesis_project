@@ -1,4 +1,5 @@
 <!-- Material form contact -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <mdb-card>
 
@@ -17,14 +18,14 @@
 
       <!-- Name -->
       <div class="md-form mt-3">
-        <input type="text" id="materialContactFormName" class="form-control" mdbInput>
-        <label for="materialContactFormName">Name</label>
+        <input type="text" id="materialContactFormName" class="form-control"  #name mdbInput required>
+        <label for="materialContactFormName"><i class="fas fa-file-signature"></i> Your name/Username:</label>
       </div>
 
       <!-- E-mail -->
       <div class="md-form">
-        <input type="email" id="materialContactFormEmail" class="form-control" mdbInput>
-        <label for="materialContactFormEmail">E-mail</label>
+        <input type="email" id="materialContactFormEmail" class="form-control" #email mdbInput required>
+        <label for="materialContactFormEmail"><i class="fas fa-envelope"></i> Your E-mail:</label>
       </div>
 
       <!-- Subject -->
@@ -32,15 +33,15 @@
 
       <!--Message-->
       <div class="md-form">
-        <textarea type="text" id="materialContactFormMessage" class="form-control md-textarea" mdbInput></textarea>
-        <label for="materialContactFormMessage">Message</label>
+        <textarea type="text" id="materialContactFormMessage" class="form-control md-textarea" #message mdbInput required></textarea>
+        <label for="materialContactFormMessage"><i class="far fa-comment-dots"></i> Message</label>
       </div>
 
       <!-- Copy -->
       
 
       <!-- Send button -->
-      <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+      <button mdbBtn color="info" outline="true" (click)="send(name.value, email.value, message.value)" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
         type="submit">Send</button>
 
     </form>
@@ -49,4 +50,11 @@
   </mdb-card-body>
 
 </mdb-card>
+<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="isSended">
+  <strong>Thanks you!</strong> We'll check your suggestion and work on it.
+  <button type="button"  (click)="reset()" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
 <!-- Material form contact -->

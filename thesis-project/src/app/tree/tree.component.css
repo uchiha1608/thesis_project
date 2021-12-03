@@ -20,7 +20,7 @@ a{
     position: relative;
 }
 #tree{
-    height: 100%;
+    height: 82vh;
     width: 100%;
     float: left;
     margin-top: 5vh;
@@ -42,5 +42,13 @@ body{
         margin: auto;
         height: auto;
         
+    }
+}
+.form-select{
+    width: 12vw;
+}
+@media only screen and (max-width: 850px) {
+    .form-select{
+        width: 95vw;
     }
 }

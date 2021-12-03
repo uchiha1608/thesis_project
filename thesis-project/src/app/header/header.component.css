@@ -10,7 +10,8 @@
 }
 .navbar{
     position: sticky;
-    top: 0;    
+    top: 0;
+      
 }
 mdb-navbar{
     position: fixed;
@@ -19,6 +20,9 @@ mdb-navbar{
     width: 100%;
     z-index: 15;
     border: 0;
+    background-color: #16A085
+	
+    ;
     
 }
 @media only screen and (max-width: 850px){
@@ -31,4 +35,7 @@ mdb-navbar{
 }
 .navbar{
     z-index: 5;
+}
+.login-btn{
+    margin-right: 5px;
 }

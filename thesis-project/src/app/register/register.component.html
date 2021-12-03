@@ -24,7 +24,7 @@
     		
     	</div></div>
     	<div class="form-container needs-validation">
-    	<form action="/home">
+    	<form  action="/home">
     		<div class=" mb-3">
     			<div class="form-label ">Username</div>
     			<input type="email" #username name="username" id="username" class="form-control" required>
@@ -64,7 +64,7 @@
           <label class="form-label">
             <input class="form-check-input" type="checkbox" name="remember" id="remeber"> Remember this account
           </label>
-          <a class="forget-pass" href="/login">Already have an account?</a>           
+          <a class="forget-pass" [routerLink]="['/login']">Already have an account?</a>           
         </div>
     		
     	</form>

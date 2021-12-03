@@ -34,8 +34,18 @@ export class ApiService {
     const url = "http://localhost/api.com/admin.php";
     return this.htttp.post<any>(url, formData);
   }
-  imgService(formData: FormData): Observable<any>{
-    const url = "";
-    return this.htttp.post<any>(url, formData);
+  imgService(): Observable<any>{
+    const key = "F6yj8Gf0VVqhl_cXPQLlVNV8YazWDuF__zWGYG8KmPY";
+    const page = 20;
+    const per_page = 3;
+    return this.htttp.get(`https://api.unsplash.com/photos/?client_id=F6yj8Gf0VVqhl_cXPQLlVNV8YazWDuF__zWGYG8KmPY`);
+  }
+  fbLoginService(fbForm: FormData): Observable<any>{
+    const url = "http://localhost/api.com/fblogin.php";
+    return this.htttp.post<any>(url, fbForm);
+  }
+  message(message: FormData): Observable<any>{
+    const url="http://localhost/api.com/message.php";
+    return this.htttp.post<any>(url, message);
   }
 }

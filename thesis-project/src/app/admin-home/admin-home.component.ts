@@ -19,8 +19,18 @@ export class AdminHomeComponent implements OnInit {
   username = "";
   constructor(private apiService: ApiService, private title: Title) { }
   temp  = "<h1>Ehe</h1>";
+  treeData = '';
   ngOnInit(): void {
     this.title.setTitle("Admin - Family tree");
+    const formData: FormData = new FormData();
+    formData.append('request', 'get_all');
+    this.apiService.loginService(formData).subscribe(
+      res=> {
+        this.treeData = res['tree'];
+      }, err=> {
+
+      }
+    );
   }
   @HostListener('window:keyup', ['$event'])
   keyEvent(event:KeyboardEvent){

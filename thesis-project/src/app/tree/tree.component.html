@@ -4,47 +4,52 @@
 <link rel="stylesheet" href="tree.component.css">
 <div class="w3-container w3-padding-64 w3-center">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--<h2>Hoàng's Family tree</h2>
 
-<div class="wrapper">
-<div id="sidehar" class="sidebar-header">
-<li>
-    <a>
-        Family's name: Hoàng
-    </a>
-    </li>
-    <li><a>
-        Numbers of generations: 9
-    </a></li>
-    <li><a>
-        Number of family members: 50
-    </a></li>
-</div>
+
+<!--<div id="editForm" style="display:none; text-align:center; position:absolute; border: 1px solid #aeaeae;width:500px;background-color:white;z-index:10000; ">
+    <div style="padding: 10px 0 10px 0; background-color:#039BE5; color: #ffffff;">Edit Form</div>
+    <div>
+        <div style="width: auto;padding: 10px 0 5px 0;">
+            <label style="color:black; width:50px; display:inline-block;" for="name">Name</label>
+            <input style="background-color:#FFCA28" id="name" value="" />
+        </div>
+        <div style="padding: 5px 0 10px 0;">
+            <label style="color:black; width:50px; display:inline-block;" for="title">Title</label>
+            <input style="background-color:#FFCA28"  id="title" value="" />
+        </div>
+        <div style="padding: 5px 0 10px 0;">
+            <label style="color:black; width:50px; display:inline-block;" for="title">Title</label>
+            <input style="background-color:#FFCA28"  id="title" value="" />
+        </div>
+        <div style="padding: 5px 0 10px 0;">
+            <label style="color:black; width:50px; display:inline-block;" for="title">Title</label>
+            <input style="background-color:#FFCA28"  id="title" value="" />
+        </div>
+        <div style="padding: 5px 0 15px 0;">
+            <button style="width:108px;" id="cancel">Cancel</button>
+            <button style="width:108px;" id="save">Save</button>
+        </div>
+    </div>
 </div> -->
 
-<!-- <ng-template [ngIf]="getItemm('username')!=''"> -->
-<!--<div class="tree-wrapper" style="border: 2px;border-style: outset;"> -->
-    <!--{{this.dataSource}}
+
     
-    {{this.temp2}}-->
-    <label style="position: absolute;left: 120px;font-size: 14px;padding: 10px;color: black;width: auto;">Choose your template:</label>
-    <select style="position: absolute;left: 17vw;font-size: 14px;padding: 10px;background-color: #F57C00;color: #ffffff;width: auto;z-index:2;" id="selectTemplate">
-    
-    <option>olivia</option>
-    <option>diva</option>
-    <option>mila</option>
-    <option>polina</option>
-    <option>mery</option>
-    <option>rony</option>
-    <option>belinda</option>
-    <option>ula</option>
-    <option>ana</option>
-    <option>isla</option>
-    <option>deborah</option>
+    <select  class="form-select form-select-lg mb-3" style="position: absolute;left: 3vw;font-size: 14px;padding: 10px;z-index:2;" id="selectTemplate">
+        <option selected>Choose your template</option>
+        <option>olivia</option>
+        <option>diva</option>
+        <option>mila</option>
+        <option>polina</option>
+        <option>mery</option>
+        <option>rony</option>
+        <option>belinda</option>
+        <option>ula</option>
+        <option>ana</option>
+        <option>isla</option>
+        <option>deborah</option>
     </select>
-    <div id="tree" class="tree-content">
-        <!--<select id="orientation" style="position: absolute;right: 30px;top: 30px;font-size: 14px;padding: 10px;background-color: #F57C00;color: #ffffff;width: 100px;z-index:2;" id="selectTemplate">
-        </select> -->
+    <div id="tree" class="tree-content" >
+    
     </div>
-<!--</div> -->
-<!-- </ng-template> -->
+
+

@@ -16,18 +16,18 @@ export class HeaderComponent implements OnInit {
     sessionStorage.removeItem('username');
   }
   ngOnInit(): void {
-    $(document).on('scroll', function(){
-      if($(window).scrollTop() > 30){
-        $('#navbar').addClass('cyan');
-      }
-      else if($(window).length <1400){
-        $('navbar').addClass('cyan');
-      }
-      else{
-        $('#navbar').removeClass('cyan');
+    // $(document).on('scroll', function(){
+    //   if($(window).scrollTop() > 30){
+    //     $('#navbar').addClass('cyan');
+    //   }
+    //   else if($(window).length <1400){
+    //     $('navbar').addClass('cyan');
+    //   }
+    //   else{
+    //     $('#navbar').removeClass('cyan');
         
-      }
-    });
+    //   }
+    // });
   }
   
   

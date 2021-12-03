@@ -1,30 +1,33 @@
 <div [style.background-image]="'url(https://static2.srcdn.com/wordpress/wp-content/uploads/2020/10/Genshin-Impact-Mondstat-View.jpg)'"></div>
 <div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <ng-template [ngIf]="getItemm('sex')=='male'">
-                                <img src="assets/img/male-users.png" alt="User profile picture"/>
-                            </ng-template>
-                            <ng-template [ngIf]="getItemm('sex')=='female'">
-                                <img src="assets/img/female-users.png" alt="User profile picture"/>
-                            </ng-template>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
-                        </div>
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <ng-template [ngIf]="getItemm('sex')=='male'">
+                        <img src="assets/img/male-users.png" alt="User profile picture"/>
+                    </ng-template>
+                    <ng-template [ngIf]="getItemm('sex')=='female'">
+                        <img src="assets/img/female-users.png" alt="User profile picture"/>
+                    </ng-template>
+                        <ng-template [ngIf]="getItemm('sex')==''">
+                        <img src="assets/img/blank-profile-picture.png" alt="User profile picture"/>
+                    </ng-template>
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" name="file"/>
                     </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                                    <h5>
-                                        {{curUser}}
-                                    </h5>
-                                    <h6>
-                                        UID: {{curId}}
-                                    </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        {{curUser}}
+                    </h5>
+                    <h6>
+                        UID: {{curId}}
+                    </h6>
+                        <p class="proile-rating">Age: <span>22</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -38,9 +41,13 @@
                     
                     <div class="col-md-2">
                         <!--<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>-->
-                        <button type="button" class="btn btn-primary rounded-pill border border-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            Edit profile
+                        <div class="row  button-row">
+                            <button type="button" class="btn btn-primary edit-profile-btn rounded-pill border border-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Edit profile
                             </button>
+                            <button type="button" class="btn btn-primary rounded-pill border change-pass-btn border-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                                Change password
+                            </button></div>
                             
 
                             <!-- Modal -->
@@ -48,7 +55,7 @@
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">EDIT PROFILE</h5>
+                                    <h5 class="modal-title text-center" id="staticBackdropLabel">EDIT PROFILE</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -76,14 +83,46 @@
                                     <div class="form-label">Date of birth</div>
                                     <input type="date" value={{curDOB}} id="editDOB" name="editDOB" #editDOB class="form-control">
                                     </div>
+                                    <div class="mb-3">
+                                        <div class="form-label">Profession</div>
+                                        <input type="text" value={{curProfess}} id="editProfess" name="editProfess" #editProfess class="form-control">
+                                        </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" (click)="edit(editFname.value,editLname.value, editEmail.value, editPhone.value, editDOB.value)" class="btn btn-primary">Save changes</button>
+                                    <button type="button" (click)="edit(editFname.value,editLname.value, editEmail.value, editPhone.value, editDOB.value, editProfess.value)" class="btn btn-primary">Save changes</button>
                                 </div>
                                 </div>
+                            </div>                            
                             </div>
-                        </div>
+                            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-center" id="staticBackdropLabel">Change password</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">                    
+                                        <div class="mb-3">
+                                        <div class="form-label">Your old password:</div>
+                                        <input type="password" value="" id="editEmail" name="editEmail" #editEmail class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                        <div class="form-label">New password:</div>
+                                        <input type="password" value="" id="editPhone" name="editPhone" #editPhone class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                        <div class="form-label">Re-confirm new password:</div>
+                                        <input type="password" value="" id="editDOB" name="editDOB" #editDOB class="form-control">
+                                        </div>                                       
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" (click)="edit(editFname.value,editLname.value, editEmail.value, editPhone.value, editDOB.value, editProfess.value)" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                    </div>
+                                </div>                            
+                                </div>
                     
                     </div>
                 </div>
@@ -106,7 +145,7 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>User Name:</label>
+                                                <label><i class="fas fa-user"></i> User Name:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{curUser}}</p>
@@ -114,7 +153,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Name:</label>
+                                                <label><i class="fas fa-file-signature"></i> Name:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{curName}}</p>
@@ -122,7 +161,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Email:</label>
+                                                <label><i class="fas fa-envelope"></i> Email:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{curEmail}}</p>
@@ -130,7 +169,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Phone:</label>
+                                                <label><i class="fas fa-mobile-alt"> </i>  Phone:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{curPhone}}</p>
@@ -138,7 +177,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Date of birth:</label>
+                                                <label><i class="far fa-calendar-alt"></i> Date of birth:</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{curDOB}}</p>
@@ -146,10 +185,10 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Profession</label>
+                                                <label><i class="fas fa-chalkboard-teacher"></i> Profession</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
+                                                <p>{{curProfess}}</p>
                                             </div>
                                         </div>
                             </div>

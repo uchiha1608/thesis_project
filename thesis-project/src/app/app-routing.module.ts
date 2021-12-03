@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: "admin-home", component:AdminHomeComponent},
   { path: "profile", component:ProfileComponent},
   { path: "photo-gallery", component: PhotoGalleryComponent},
-  { path: "forgetpass", component: ForgetPassWordComponent}
+  { path: "forget-pass", component: ForgetPassWordComponent}
   
 ];
 

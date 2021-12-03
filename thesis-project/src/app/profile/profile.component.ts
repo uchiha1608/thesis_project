@@ -19,13 +19,15 @@ export class ProfileComponent implements OnInit {
   curId: string = sessionStorage.getItem('id');
   curSex: string = sessionStorage.getItem('sex');
   curDOB: string = sessionStorage.getItem('dob');
+  curProfess: string = sessionStorage.getItem('profession');
   ngOnInit(): void {
     this.title.setTitle("profile - " + sessionStorage.getItem("username"));
+    
   }
   getItemm(item){
     return sessionStorage.getItem(item) || '';
   }
-  edit(fname: string,lname: string, email: string, phone: string, dob: string){
+  edit(fname: string,lname: string, email: string, phone: string, dob: string, profess: string){
     const formData: FormData = new FormData();
     formData.append('username', this.curUser);
     formData.append('fname', fname);
@@ -33,6 +35,7 @@ export class ProfileComponent implements OnInit {
     formData.append('email', email);
     formData.append('phone', phone);
     formData.append('dob', dob);
+    formData.append('profession', profess);
     formData.append('action', 'edit');
     formData.append('type', '3');
     this.apiService.loginService(formData).subscribe(
@@ -46,6 +49,7 @@ export class ProfileComponent implements OnInit {
           sessionStorage.setItem('email', email);
           sessionStorage.setItem('phone', phone);
           sessionStorage.setItem('dob', dob);
+          sessionStorage.setItem('profession', profess);
           window.alert("Edit success!");
           window.location.href="profile";
           // this.router.navigate(['/profile']);
