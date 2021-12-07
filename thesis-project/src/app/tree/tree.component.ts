@@ -136,8 +136,10 @@ export class TreeComponent implements OnInit {
       },
       nodeBinding: {
         field_0: "name",
-        field_1: "years",
-        field_2: "address",
+        field_1: "address",
+        field_2: "years",
+        field_3: "sex",
+        field_4: "phone",
         img_0: "img"
       }
     })

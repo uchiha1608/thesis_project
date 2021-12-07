@@ -1,35 +1,36 @@
 <!--<form class="img-form">
   <input type="file" accept="image/*">
 </form> -->
-<form *ngIf="!rightEmail">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<div class="lightbox container">
+  <div class="row">
+    <div class="col-lg-6">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Thumbnails/Slides/1.jpg"
+        data-mdb-img="https://mdbootstrap.com/img/Photos/Slides/1.jpg"
+        alt="Lightbox image 1"
+        class="w-100 mb-2 mb-md-4 shadow-1-strong rounded"
+      />
+      <img
+        src="https://mdbootstrap.com/img/Photos/Thumbnails/Square/1.jpg"
+        data-mdb-img="https://mdbootstrap.com/img/Photos/Square/1.jpg"
+        alt="Lightbox image 2"
+        class="w-100 shadow-1-strong rounded"
+      />
+    </div>
+    <div class="col-lg-6">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Thumbnails/Vertical/1.jpg"
+        data-mdb-img="https://mdbootstrap.com/img/Photos/Vertical/1.jpg"
+        alt="Lightbox image 3"
+        class="w-100 shadow-1-strong mb-2 mb-md-4 rounded"
+      />
+      <img
+        src="./assets/img/chautham.jpg"
+        data-mdb-img="https://mdbootstrap.com/img/Photos/Vertical/1.jpg"
+        alt="Lightbox image 4"
+        class="w-100 shadow-1-strong rounded"
+      />
+    </div>
+    
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button (click)="setIf()" type="submit" class="btn btn-primary">Submit</button>
-</form>
-<form *ngIf="rightEmail" class="form-2">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">mlem mlem address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">mlem mlem</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>

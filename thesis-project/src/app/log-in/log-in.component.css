@@ -77,3 +77,16 @@ a{
 i .bi-google{
   margin-right: 75px;
 }
+.facebook-login{
+  text-decoration: none;
+  color: white;
+  margin-right: 50px;
+}
+.fa-facebook-f{
+  padding-top: 3px;
+  padding-left: 5px;
+  position: absolute;
+}
+.face-btn{
+  
+}

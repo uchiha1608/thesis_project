@@ -57,29 +57,26 @@
           <label class="form-label">
             <input class="form-check-input" type="checkbox" name="remember" id="remeber"> Remember this account
           </label>
-          <a class="forget-pass" href="/forgetpass">Forget your password?</a>           
+          <a class="forget-pass" [routerLink]="['/forget-pass']">Forget your password?</a>           
         </div>
     		
     	</form>
-      <div class="d-grid"><button id="login" (click)="login(username.value, password.value)"  class="btn btn-primary btn-lg btn-block login-btn">Sign in</button></div>
-      <div class="text-center alter-log"><span class="text-center">Or login with:</span></div>
-      <div class="row media-login">
-        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
-          <a href=# class="facebook-login">
-            
-            <i class="bi bi-facebook h3"></i>
-          </a>
+      <div class="d-grid"><button id="login" (click)="login(username.value, password.value)"  class="btn btn-info btn-lg btn-block login-btn">Sign in</button></div>
+      <div class="text-center alter-log"><span class="text-center">Don't want to create account?:</span></div>
+      
+        <div class="d-grid">
+          <button id="login" style="margin-top: 2vh;" (click)="popUp()"  class="btn btn-primary btn-lg  face-btn">Sign in with:  <i class="fab fa-facebook-f"></i></button>
         </div>
-        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
-          <a href=# class="google-login">
+        <!--<div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+          <a href=# class=" google-login">
             
             <i class="bi bi-google h3"></i>
           </a>
-        </div>
-      </div>
+        </div> -->
+      
       <hr class="bg-danger border-2 border-top border-danger">
       <div class="text-center">Don't have an account yet?</div>
-      <div class="d-grid create-account "><a href="/register" class="btn btn-primary btn-lg regis-btn regis-btn btn-block" role="button" data-bs-toggle="/register"><div class="text-center">Create new account</div></a></div>
+      <div class="d-grid create-account "><a [routerLink]="['/register']" class="btn btn-info btn-lg regis-btn regis-btn btn-block" role="button" data-bs-toggle="/register"><div class="text-center">Create new account</div></a></div>
     </div>
 
     </div>

@@ -81,3 +81,7 @@ a{
   font-size: 26px;
   width: 60%;
 }
+.float-left{
+  padding-top: 3px;
+  padding-right:3px;
+}

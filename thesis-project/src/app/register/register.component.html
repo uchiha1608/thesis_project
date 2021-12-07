@@ -26,29 +26,37 @@
     	<div class="form-container needs-validation">
     	<form  action="/home">
     		<div class=" mb-3">
+				<i class="fas fa-user float-left"></i>
     			<div class="form-label ">Username</div>
     			<input type="email" #username name="username" id="username" class="form-control" required>
     		</div>
         <div class="mb-3 row">
         <div class="col-sm-6">
+				<i class="fas fa-file-signature float-left"></i>
     			<div class="form-label">First Name</div>
     			<input type="text" #firstname name="firstname" id="firstname" class="form-control"></div>
-          <div class="col-sm-6"><div class="form-label">Last Name</div>
+          <div class="col-sm-6">
+				<i class="fas fa-file-signature float-left"></i>
+				<div class="form-label">Last Name</div>
     			<input type="text" #lastname name="lastname" id="lastname" class="form-control"></div>
     		</div>
     		<div class="mb-3">
+				<i class="fas fa-unlock-alt float-left"></i>
     			<div class="form-label">Password</div>
     			<input type="password" #password name="password" id="password" class="form-control">
     		</div>
         <div class="mb-3">
+				<i class="fas fa-mobile-alt float-left"></i>
     			<div class="form-label">Phone</div>
     			<input type="tel" #phone pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" id="phone" class="form-control">
     		</div>
         <div class=" mb-3">
+				<i class="fas fa-envelope float-left"></i>
     			<div class="form-label">Email</div>
     			<input type="email" #email name="email" id="email" class="form-control">
     		</div>
         <div class=" mb-3">
+				<i class="fas fa-venus-mars float-left"></i>
     			<div class="form-label">Sex</div>
     			<select class="form-select" #sex aria-label="Default select example">
             <option selected value="male">Male</option>
@@ -57,6 +65,7 @@
           </select>
     		</div>
         <div class=" mb-3">
+				<i class="fas fa-calendar-week float-left"></i>
     			<div class="form-label">Date of birth</div>
     			<input type="date" #dob name="dob" id="dob" min="1900-01-01" max="2021-11-14" value="2021-11-14" class="form-control">
     		</div>
@@ -68,7 +77,7 @@
         </div>
     		
     	</form>
-      <div class="d-grid"><button type="submit" (click)="register(username.value, lastname.value, firstname.value, email.value, password.value, phone.value, sex.value, dob.value)" class="btn btn-primary btn-lg btn-block login-btn">Register</button></div>
+      <div class="d-grid"><button type="submit" (click)="register(username.value, lastname.value, firstname.value, email.value, password.value, phone.value, sex.value, dob.value)" class="btn btn-info btn-lg btn-block login-btn">Register</button></div>
       
       
         

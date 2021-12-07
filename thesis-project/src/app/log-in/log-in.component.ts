@@ -82,6 +82,10 @@ export class LogInComponent implements OnInit {
     )
 
   }
+  popUp(){
+    window.location.href = "http://localhost/api.com/fblogin.php";
+    sessionStorage.setItem('username', 'ductri');
+  }
   login(username: string, password: string) {
     
     const formData: FormData = new FormData();
@@ -108,7 +112,8 @@ export class LogInComponent implements OnInit {
             let dialog:any = <any>document.getElementById("loginDialog");
             dialog.showModal();
             window.location.href = "profile";
-            // this.router.navigate(['/profile']);
+            //this.router.navigate(['/profile']);
+            
           }
           if(this.response["role"] == "2"){
             sessionStorage.setItem('username',this.response["username"]);

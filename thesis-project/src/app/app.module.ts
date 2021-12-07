@@ -18,7 +18,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { TermAndServiceComponent } from './term-and-service/term-and-service.component';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { IntroComponent } from './intro/intro.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
@@ -26,10 +25,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './guards/auth.guard'; 
 import { ApiService } from './api.service';
 import { ProfileComponent } from './profile/profile.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ForgetPassWordComponent } from './forget-pass-word/forget-pass-word.component';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 import { NgBootstrapFormValidationModule, CUSTOM_ERROR_MESSAGES } from 'ng-bootstrap-form-validation';
+import { SampleTreeComponent } from './sample-tree/sample-tree.component';
+
 
 @NgModule({
   declarations: [
@@ -42,14 +42,13 @@ import { NgBootstrapFormValidationModule, CUSTOM_ERROR_MESSAGES } from 'ng-boots
     HeaderComponent,
     FooterComponent,
     ContactUsComponent,
-    TermAndServiceComponent,
     OurServicesComponent,
     IntroComponent,
     AdminHomeComponent,
     ProfileComponent,
-    LandingPageComponent,
     ForgetPassWordComponent,
-    PhotoGalleryComponent
+    PhotoGalleryComponent,
+    SampleTreeComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +65,11 @@ import { NgBootstrapFormValidationModule, CUSTOM_ERROR_MESSAGES } from 'ng-boots
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     NgBootstrapFormValidationModule.forRoot(),
-    NgBootstrapFormValidationModule
+    NgBootstrapFormValidationModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: "xxx",
+    //   libraries: ["places", "geometry"]
+    // })
   ],
   providers: [ Title, AuthGuard, ApiService,
   ],

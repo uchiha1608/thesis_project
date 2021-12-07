@@ -13,6 +13,12 @@
 :host ::ng-deep [data-n-id='47'] rect, :host ::ng-deep [data-n-id='2'] rect{
     fill: pink;
 }
+:host ::ng-deep .field_0 {
+    font-family: Impact;
+    text-transform: uppercase;
+    fill: #9b1919;
+}
+
 .tree-container{
     border: 2px solid;
 }
@@ -51,4 +57,8 @@ body{
     .form-select{
         width: 95vw;
     }
+}
+.tree{
+    margin-top: 56px;
+    
 }
